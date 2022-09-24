@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Redirect Chat
+    </title>
+    <meta name="description" content="WhatsApp Redirect" />
+    <meta name="author" content="Guilherme Delmiro" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        .gradient {
+            background: linear-gradient(90deg, #075E54 0%, #25D366 100%);
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+    <!--Nav-->
+    <nav id="header" class="w-full z-30 top-0 text-white">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+            <div class="pl-4 flex items-center">
+                <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+                    href="#">
+                    <!--Icons : http://www.potlabicons.com/ -->
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
+                        <style>
+                            @keyframes chatMotion {
+
+                                0%,
+                                to {
+                                    transform: translateY(0)
+                                }
+
+                                50% {
+                                    transform: translateY(-1px)
+                                }
+                            }
+                        </style>
+                        <path stroke="#25D366" stroke-width="1.5"
+                            d="M18.25 12v5c0 .69-.56 1.25-1.25 1.25h-5A6.25 6.25 0 1118.25 12z" />
+                        <circle cx="9" cy="12" r="1" fill="#FFF"
+                            style="animation:chatMotion .8s ease-in-out infinite" />
+                        <circle cx="12" cy="12" r="1" fill="#FFF"
+                            style="animation:chatMotion .8s ease-in-out infinite;animation-delay:.3s" />
+                        <circle cx="15" cy="12" r="1" fill="#FFF"
+                            style="animation:chatMotion .8s ease-in-out infinite;animation-delay:.5s" />
+                    </svg>
+                </a>
+            </div>
+            <div id="nav-content">
+                <ul class="list-reset lg:flex justify-end flex-1 mr-3 items-center">
+                    <li>
+                        <a id="navAction" target="_blank" href="https://github.com/guilhermehub12"
+                            class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">                            
+                            Github
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+    </nav>
+    
+    <div class="pt-24">
+        <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+            <!--Left Column-->
+            <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+                <h1 class="my-4 text-5xl font-bold leading-tight">
+                    WhatsApp Redirect!
+                </h1>
+                <p class="leading-normal text-3xl mb-8">
+                    Entre no chat de quem você quiser sem ter que salvar o número, apenas digite o número da pessoa e
+                    <i>voilà</i>!
+                </p>
+                <label class="text-2xl mb-1" for="text">Digite o número do WhatsApp</label>
+
+                <input
+                    class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                    type="number" name="number" id="number" placeholder="(00)0000-0000" required>
+
+
+                <input type="submit" value="Redirecionar" id="button"
+                    onclick="window.open('https://wa.me/' + number.value)"
+                    class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            </div>
+            <!--Right Column-->
+            <div class="w-full md:w-3/5 py-6 text-center">
+                <img class="w-full md:w-4/5 z-50" src="chat-bubble.svg" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
